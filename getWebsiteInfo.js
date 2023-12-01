@@ -14,9 +14,8 @@ export async function getImage(url) {
 
     // Navigate the page to a URL
     try {
-        // Sometimes the page won't be loaded fully before taking the screen
-        // you can remove waitUntil parameter if you prefer speed over accuracy
-        await page.goto(url, { waitUntil: 'networkidle0' });
+        // { waitUntil: 'networkidle0' } if the pages aren't loaded correctly we can wait more time by adding this parameter
+        await page.goto(url,);
     } catch (e) {
         console.log("Error while trying to visit url: " + url)
         console.log("ERR: " + e)
